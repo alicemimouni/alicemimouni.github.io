@@ -18,4 +18,8 @@ body {
     font-family: $font-text;
     color: $black;
     background-color: $extra-light-grey;
+
+    a {
+        text-decoration: none;
+    }
 }

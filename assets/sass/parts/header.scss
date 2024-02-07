@@ -1,102 +1,280 @@
 header {
-    background-image: url("/assets/img/header-background.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 1rem;
+  background-image: url("/assets/img/header-background.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1rem;
+  @include flex-column-center-center;
 
-    span {
-        color: $violet;
-    }
+  span, i.span {
+    color: $violet;
+    font-style: normal;
+  }
+
+  div.header-container {
+    @include flex-column-center-center;
+    width: 100%;
+    max-width: 1500px;
 
     div.left-header {
-        padding: 1rem;
+      padding: 1rem;
+      max-width: 500px;
+
+      h1 {
+        margin: 0;
+        font-size: 2.2rem;
+      }
+
+      p.hello {
+        font-size: 1.7rem;
+        margin: 0.5rem 0;
+      }
+
+      p.present {
+        color: $grey;
+        margin-top: 0.5rem;
+        margin-bottom: 3.5rem;
+        font-size: 1.1rem;
+
+        span {
+            white-space: nowrap;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+
+  nav {
+    @include flex-row-center-between;
+    padding: 1rem;
+    border: 1px solid $light-grey;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    a.button,
+    ul.menu {
+      display: none;
+    }
+
+    // menu
+    ul.menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      margin: 0;
+      background-color: $extra-light-grey;
+      padding-left: 0;
+
+      li {
+        padding: 1rem 0;
+        width: 100%;
+        // font-size: 1.3rem;
+        text-align: center;
+        list-style-type: none;
+
+        a {
+          transition: 0.8s;
+          position: relative;
+          display: inline-block;
+          padding-bottom: 5px;
+          transition: padding-bottom 0.3s ease;
+          color: $grey;
+        }
+
+        a::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background: $light-grey;
+          transform-origin: bottom right;
+          transform: scaleX(0);
+          transition: transform 0.3s ease;
+        }
+
+        a:hover::after {
+          transform-origin: bottom left;
+          transform: scaleX(1);
+        }
+      }
+    }
+
+    // burger menu
+    #link {
+      width: 25px;
+      height: 25px;
+      @include flex-row-center-center;
+      padding: 0.2rem;
+      border-radius: 100%;
+      position: relative;
+      z-index: 11;
+
+      // burger menu
+      // middle bar
+      #burger {
+        width: 20px;
+        height: 2px;
+        background: $black;
+        display: inline-block;
+        position: relative;
+      }
+
+      // top and bottom bars
+      #burger::before,
+      #burger::after {
+        content: "";
+        height: 2px;
+        background: $black;
+        display: inline-block;
+        position: absolute;
+        transform-origin: center;
+        transition: all 0.3s ease;
+        right: 0;
+      }
+
+      #burger::before {
+        top: -7px;
+        right: 0;
+        width: 30px;
+      }
+
+      #burger::after {
+        top: 7px;
+        width: 10px;
+      }
+
+      // on click burger menu become cross
+      #burger.open {
+        background: transparent; // middle bar
+      }
+
+      // change top and bottom bars to make a cross
+      #burger.open::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      #burger.open::after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+    }
+  }
+
+  // medias queries
+  @media screen and (min-width: 450px) {
+    div.header-container {
+      div.left-header {
+        p.present {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    nav {
+        border: none;
+        padding: 1rem 2rem;
+        box-sizing: border-box;
+  
+        .logo {
+          font-size: 1.2rem;
+        }
+      }
+  }
+
+  @media screen and (min-width: 700px) {
+    div.header-container {
+      @include flex-row-center-between;
+
+      div.left-header {
+        margin-top: 3rem;
+        margin-left: 3rem;
+        margin-bottom: 4rem;
 
         h1 {
-            margin: 0;
-            font-size: 2.2rem;
-        }
+            font-size: 2.7rem;
+          }
+  
+          p.hello {
+            font-size: 2rem;
+          }
+  
+          p.present {
+            font-size: 1.4rem;
+          }
+      }
+    }
+  }
 
-        p.hello {
-            font-size: 1.7rem;
-            margin: 1rem 0;
-        }
+  @media screen and (min-width: 800px) {
 
-        p.present {
-            color: $grey;
+    div.header-container {
+        div.left-header {
+            margin-left: 4rem;
+        }
+    }
+  }
+
+  @media screen and (min-width: 1100px) {
+    div.header-container {
+        div.left-header {
+            margin-left: 6rem;
         }
     }
 
     nav {
+        max-width: 1280px;
 
-        @include flex-row-center-between;
-        padding: 1rem;
-        border: 1px solid $light-grey;
-        border-radius: 20px;
-        margin-bottom: 1rem;
-        a.button, ul.menu {
-            display: none;
+      ul.menu,
+      a.button {
+        display: flex;
+      }
+
+      ul.menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: initial;
+        background-color: transparent;
+        height: auto;
+        max-width: 700px;
+
+        li {
+            a {
+                padding-bottom: 0;
+            }
         }
+      }
 
-        // burger menu
-        #link {
-           width: 25px;
-           height: 25px;
-           @include flex-row-center-center;
-           padding: 0.2rem;
-           border-radius: 100%;
-           position: relative;
-           z-index: 11;
-
-           // burger menu
-           // middle bar
-           #burger {
-               width: 20px;
-               height: 2px;
-               background: $black;
-               display: inline-block;
-               position: relative;
-           }
-
-           // top and bottom bars
-           #burger::before,
-           #burger::after {
-               content: '';
-               height: 2px;
-               background: $black;
-               display: inline-block;
-               position: absolute;
-               transform-origin: center;
-               transition: all 0.3s ease;
-               right: 0;
-           }
-
-           #burger::before {
-               top: -7px;
-               right: 0;
-               width: 30px;
-           }
-
-           #burger::after {
-               top: 7px;
-               width: 10px;
-           }
-
-           // on click burger menu become cross
-           #burger.open {
-               background: transparent; // middle bar
-           }
-
-           // change top and bottom bars to make a cross
-           #burger.open::before {
-               transform: rotate(45deg);
-               top: 0;
-           }
-
-           #burger.open::after {
-               transform: rotate(-45deg);
-               top: 0;
-           }
-       }
+      div.navbar {
+        display: none;
+      }
     }
+  }
+
+  @media screen and (min-width: 1200px) {
+    div.header-container {
+        div.left-header {
+            margin-left: 8rem;
+            margin-top: 0;
+        }
+    }
+  }
 }
