@@ -5,6 +5,7 @@ header {
   background-position: center;
   padding: 1rem;
   @include flex-column-center-center;
+  margin-bottom: 3rem;
 
   span, i.span {
     color: $violet;

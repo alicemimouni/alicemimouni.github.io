@@ -1,0 +1,31 @@
+section#contact {
+    div.form {
+        margin-bottom: 2rem;
+        form {
+            input:not(.button), textarea {
+                border: 1px solid $light-grey;
+                border-radius: 15px;
+                padding: 1rem;
+                margin: 0.5rem;
+                background-color: transparent;
+                width: 280px;
+            }
+    
+            input.button {
+                border: none;
+                margin: 0.5rem;
+            }
+    
+            input::placeholder, textarea::placeholder {
+                font-family: $font-text;
+                font-size: 1rem;
+                font-weight: 500;
+                color: $grey;
+            }
+    
+            textarea {
+                height: 200px;
+            }
+        }
+    }
+}

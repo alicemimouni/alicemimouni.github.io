@@ -29,7 +29,8 @@ body {
         background: linear-gradient(to right, rgba(224, 229, 235, 0.5), $light-grey);
         display: inline-block;
         padding: 0.5rem 1rem;
-        border-radius: 20px;
+        border-radius: 15px;
+        margin-bottom: 2rem;
     }
 
     section {
@@ -41,6 +42,7 @@ body {
         color: $violet;
         font-size: 1.2rem;
         font-weight: 500;
+        margin: 1rem;
     }
 
 

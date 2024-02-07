@@ -1,0 +1,22 @@
+section#projects {
+    div.projects-container {
+        margin: 1rem 0;
+        @include flex-row-center-center;
+        flex-wrap: wrap;
+        max-width: 1215px;
+
+        a.project-card {
+            border: 1px solid $light-grey;
+            border-radius: 15px;
+            margin: 1rem 0;
+        }
+    }
+
+    @media screen and (min-width: 400px) {
+        div.projects-container {
+            a.project-card {
+                margin: 1rem;
+            }
+        }
+    }
+}
