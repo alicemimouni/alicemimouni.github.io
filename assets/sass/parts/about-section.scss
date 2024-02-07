@@ -1,0 +1,26 @@
+section#about {
+    div.container {
+        @include flex-column-center-center;
+
+        div.text-content {
+            color: $grey;
+        }
+    }
+
+
+    // medias queries
+    @media screen and (min-width: 700px) {
+       flex-direction: row;
+       justify-content: space-between;
+       align-items: end;
+       
+       picture {
+        order: -1; /* Inverse l'ordre de l'élément picture */
+      }
+
+      div.container {
+        margin-right: 2rem;
+        align-items: start;
+      }
+    }
+}

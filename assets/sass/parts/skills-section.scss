@@ -1,0 +1,20 @@
+section#skills {
+    h3 {
+        text-align: center;
+    }
+
+    div.cards-skills-container {
+        @include flex-row-center-center;
+        flex-wrap: wrap;
+
+        div.card-skills {
+            padding: 1rem;
+            @include flex-column-center-center;
+
+            p {
+                font-size: 0.8rem;
+                color: $grey;
+            }
+        }
+    }
+}
