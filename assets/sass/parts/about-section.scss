@@ -1,4 +1,6 @@
 section#about {
+    max-width: 1280px;
+    margin: auto;
     div.container {
         @include flex-column-center-center;
 
