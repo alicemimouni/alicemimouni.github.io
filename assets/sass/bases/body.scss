@@ -1,0 +1,21 @@
+*::selection {
+    background-color: $violet;
+    color: white;
+  } 
+  
+  *::-moz-selection {
+    background-color: $violet;
+    color: white;
+  }
+
+  *:focus {
+    outline: none;
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font-text;
+    color: $black;
+    background-color: $extra-light-grey;
+}

@@ -1,0 +1,102 @@
+header {
+    background-image: url("/assets/img/header-background.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1rem;
+
+    span {
+        color: $violet;
+    }
+
+    div.left-header {
+        padding: 1rem;
+
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        p.hello {
+            font-size: 1.7rem;
+            margin: 1rem 0;
+        }
+
+        p.present {
+            color: $grey;
+        }
+    }
+
+    nav {
+
+        @include flex-row-center-between;
+        padding: 1rem;
+        border: 1px solid $light-grey;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+        a.button, ul.menu {
+            display: none;
+        }
+
+        // burger menu
+        #link {
+           width: 25px;
+           height: 25px;
+           @include flex-row-center-center;
+           padding: 0.2rem;
+           border-radius: 100%;
+           position: relative;
+           z-index: 11;
+
+           // burger menu
+           // middle bar
+           #burger {
+               width: 20px;
+               height: 2px;
+               background: $black;
+               display: inline-block;
+               position: relative;
+           }
+
+           // top and bottom bars
+           #burger::before,
+           #burger::after {
+               content: '';
+               height: 2px;
+               background: $black;
+               display: inline-block;
+               position: absolute;
+               transform-origin: center;
+               transition: all 0.3s ease;
+               right: 0;
+           }
+
+           #burger::before {
+               top: -7px;
+               right: 0;
+               width: 30px;
+           }
+
+           #burger::after {
+               top: 7px;
+               width: 10px;
+           }
+
+           // on click burger menu become cross
+           #burger.open {
+               background: transparent; // middle bar
+           }
+
+           // change top and bottom bars to make a cross
+           #burger.open::before {
+               transform: rotate(45deg);
+               top: 0;
+           }
+
+           #burger.open::after {
+               transform: rotate(-45deg);
+               top: 0;
+           }
+       }
+    }
+}
