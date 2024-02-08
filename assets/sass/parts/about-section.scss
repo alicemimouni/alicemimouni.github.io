@@ -6,6 +6,15 @@ section#about {
 
         div.text-content {
             color: $grey;
+
+            a {
+              color: $grey;
+              text-decoration: underline;
+              transition: color 1s ease-in-out;
+            }
+            a:hover {
+              color: $violet;
+            }
         }
     }
 

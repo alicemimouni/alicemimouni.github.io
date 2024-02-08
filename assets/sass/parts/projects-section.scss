@@ -6,6 +6,7 @@ section#projects {
         max-width: 1215px;
 
         a.project-card {
+            transition: transform 1s ease;
             img {
                 border: 1px solid $light-grey;
                 border-radius: 15px;
@@ -18,6 +19,10 @@ section#projects {
         div.projects-container {
             a.project-card {
                 margin: 1rem;
+            }
+
+            a.project-card:hover {
+                transform: scale(1.1);
             }
         }
     }

@@ -23,7 +23,7 @@ header {
 
       h1 {
         margin: 0;
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
 
       p.hello {
@@ -168,11 +168,13 @@ header {
       #burger.open::before {
         transform: rotate(45deg);
         top: 0;
+        width: 20px;
       }
 
       #burger.open::after {
         transform: rotate(-45deg);
         top: 0;
+        width: 20px;
       }
     }
   }
@@ -183,6 +185,10 @@ header {
       div.left-header {
         p.present {
           font-size: 1.2rem;
+        }
+
+        h1 {
+          font-size: 2.3rem;
         }
       }
     }

@@ -3,4 +3,9 @@
     border-radius: 15px;
     padding: 0.6rem 1rem;
     color: white;
+    transition: background-color 1s ease-in-out;
+}
+
+.button:hover {
+    background-color: $violet;
 }
