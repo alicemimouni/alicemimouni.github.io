@@ -1,31 +1,73 @@
 section#contact {
-    div.form {
-        margin-bottom: 2rem;
-        form {
-            input:not(.button), textarea {
-                border: 1px solid $light-grey;
-                border-radius: 15px;
-                padding: 1rem;
-                margin: 0.5rem;
-                background-color: transparent;
-                width: 280px;
-            }
-    
-            input.button {
-                border: none;
-                margin: 0.5rem;
-            }
-    
-            input::placeholder, textarea::placeholder {
-                font-family: $font-text;
-                font-size: 1rem;
-                font-weight: 500;
-                color: $grey;
-            }
-    
-            textarea {
-                height: 200px;
-            }
-        }
+  div.contact-container {
+    @include flex-column-center-center;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin-bottom: 3rem;
+
+    h3 {
+      margin: 1rem 0;
     }
+
+    div.form {
+        margin-bottom: 3rem;
+      width: 100%;
+      max-width: 320px;
+      form {
+        input:not(.button),
+        textarea {
+          border: 1px solid $light-grey;
+          border-radius: 15px;
+          padding: 1rem;
+          margin: 0.5rem 0;
+          background-color: transparent;
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        input.button {
+          border: none;
+          margin: 0.5rem 0;
+          font-family: $font-text;
+          font-size: 1rem;
+          cursor: pointer;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+          font-family: $font-text;
+          font-size: 1rem;
+          font-weight: 500;
+          color: $grey;
+        }
+
+        textarea {
+          height: 200px;
+        }
+      }
+    }
+
+    div.contact-details {
+        margin-bottom: 3rem;
+      .details {
+        @include flex-row-center-start;
+
+        a {
+          color: $black;
+          margin: 0.5rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+
+  // medias queries
+  @media screen and (min-width: 750px) {
+    div.contact-container {
+      @include flex-row-start-around;
+      padding: 0 1rem;
+    }
+  }
 }

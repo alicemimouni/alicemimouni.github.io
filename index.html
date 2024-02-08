@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alice Mimouni | Développeuse web fullstack</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
                 <li><a href="/#projects">Projets</a></li>
                 <li><a href="/#contact">Contact</a></li>
             </ul>
-            <a href="" class="button">Contactez-moi</a>
+            <a href="mailto:alicemimouni@outlook.com" class="button">Contactez-moi</a>
         </nav>
         <div class="header-container">
             <div class="left-header">
@@ -38,7 +38,7 @@
                     <p class="present">une <span>&lt;Développeuse</span><i class="span"> web </i><span>fullstack/&gt;</span> passionnée par la création de solutions web innovantes.</p>
     
                 </div>
-                <a href="" class="button">Réserver un appel</a>
+                <a href="mailto:alicemimouni@outlook.com" class="button">Réserver un appel</a>
             </div>
             <picture>
                 <source srcset="/assets/img/robot-developpeur-web-fullstack.webp" type="image/webp">
@@ -187,32 +187,34 @@
         <!-- contact section -->
         <section id="contact">
             <h2>Contactez-moi</h2>
-            <div class="form">
-                <h3>Discutons ensemble</h3>
-                <form action="send_email.php" method="post">
-                    <input type="text" id="name" name="name" placeholder="Nom"><br>
-                    <input type="email" id="email" name="email" placeholder="Email"><br>
-                    <textarea id="message" name="message" placeholder="Message"></textarea><br>
-                    <input class="button" type="submit" value="Envoyer">
-                </form>
-            </div>
-            <div class="contact-details">
-                <h3>Restons connectés</h3>
-                <div class="details">
-                    <img src="/assets/img/email-logo.svg" alt="Envoyer un email.">
-                    <a href="mailto:alicemimouni@outlook.com" target="_blank">alicemimouni@outlook.com</a>
+            <div class="contact-container">
+                <div class="form">
+                    <h3>Discutons ensemble</h3>
+                    <form action="send_email.php" method="post">
+                        <input type="text" id="name" name="name" placeholder="Nom"><br>
+                        <input type="email" id="email" name="email" placeholder="Email"><br>
+                        <textarea id="message" name="message" placeholder="Message"></textarea><br>
+                        <input class="button" type="submit" value="Envoyer">
+                    </form>
                 </div>
-                <div class="details">
-                    <img src="/assets/img/phone-logo.svg" alt="Appellez moi par téléphone.">
-                    <a href="tel:0782261953" target="_blank">07 82 26 19 53</a>
-                </div>
-                <div class="details">
-                    <img src="/assets/img/linkedin-logo.svg" alt="Visitez mon profil LinkedIn.">
-                    <a href="https://www.linkedin.com/in/alice-mimouni/" target="_blank">alice-mimouni</a>
-                </div>
-                <div class="details">
-                    <img src="/assets/img/github-logo.svg" alt="Explorez mon GitHub.">
-                    <a href="https://www.linkedin.com/in/alice-mimouni/" target="_blank">alice-mimouni</a>
+                <div class="contact-details">
+                    <h3>Restons connectés</h3>
+                    <div class="details">
+                        <img src="/assets/img/email-logo.svg" alt="Envoyer un email." width="20px">
+                        <a href="mailto:alicemimouni@outlook.com" target="_blank">alicemimouni@outlook.com</a>
+                    </div>
+                    <div class="details">
+                        <img src="/assets/img/phone-logo.svg" alt="Appellez moi par téléphone." width="20px">
+                        <a href="tel:0782261953" target="_blank">07 82 26 19 53</a>
+                    </div>
+                    <div class="details">
+                        <img src="/assets/img/linkedin-logo.svg" alt="Visitez mon profil LinkedIn." width="20px">
+                        <a href="https://www.linkedin.com/in/alice-mimouni/" target="_blank">alice-mimouni</a>
+                    </div>
+                    <div class="details">
+                        <img src="/assets/img/github-logo.svg" alt="Explorez mon GitHub." width="20px">
+                        <a href="https://github.com/alicemimouni" target="_blank">alicemimouni</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -220,13 +222,14 @@
 
     <!-- footer -->
     <footer>
-         © 2024 Alice Mimouni
         <p>
             <a href="mailto:alicemouni@outlook.com">alicemimouni@outlook.com</a>
             &copy; 2024 Alice Mimouni
         </p>
-
     </footer>
+
+    <!-- scripts -->
+    <script src="assets/scripts/scripts.js"></script>
 </body>
 
 </html>
